@@ -1,0 +1,108 @@
+.form-title {
+  font-family: "Cormorant Garamond", serif;
+  text-align: center;
+  color: #3b625f;
+}
+
+.form-container {
+  width: 360px;
+  background-color: white;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 10px;
+  margin-top: 5px;
+  width: 35%;
+  margin-bottom: 90px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.form-field {
+  margin: 10px 0 10px 0;
+  padding: 15px;
+  font-size: 16px;
+  border: 0;
+  font-family: "Cormorant Garamond", serif;
+  background-color: rgba(230, 230, 230, 0.6);
+}
+
+.button-form {
+  margin: 10px 0 10px 0;
+  padding: 15px;
+  font-size: 20px;
+  border: 0;
+  width: 100%;
+  font-family: "Cormorant Garamond", serif;
+  text-align: center;
+  display: inline-block;
+  background: radial-gradient(
+    1091px at 106.5% 111.5%,
+    rgb(250, 246, 213) 0.1%,
+    rgb(218, 147, 93) 42.2%,
+    rgb(137, 86, 67) 74.3%,
+    rgb(67, 39, 39) 100.2%
+  );
+
+  color: white;
+  cursor: pointer;
+}
+
+.button-form:hover {
+  background: linear-gradient(
+    44.8deg,
+    rgba(255, 136, 102, 0.67) -53.1%,
+    rgba(255, 221, 136, 0.28) 49%
+  );
+
+  color: #596e79;
+}
+
+input::placeholder {
+  font-size: 18px;
+}
+
+#message {
+  height: 120px;
+  vertical-align: top;
+  margin-bottom: 18px;
+  background: #f2f2f2;
+  font-size: 18px;
+}
+
+#message input,
+#message textarea {
+  width: 250px;
+  height: 40px;
+  padding: 10px;
+}
+
+#message li input[type="text"],
+#message li textarea {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border: none;
+}
+
+#message li textarea {
+  height: 150px;
+  resize: none;
+}
+
+.msg-form-sent {
+  transition-duration: 10s, 30s, 230ms;
+  font-family: "Cormorant Garamond", serif;
+  color: #42b883;
+  text-align: center;
+}
+
+.error-msg {
+  font-family: "Cormorant Garamond", serif;
+  font-size: medium;
+  color: #f95959;
+}
