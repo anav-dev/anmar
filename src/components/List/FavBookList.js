@@ -103,6 +103,10 @@ function FavBookList() {
     var index1 = 0;
 
     favBooks_arr.splice(index1, favBooks_arr.length);
+    /* splice method with two parameters: 
+    1st = where array will start to be change -> We want to start removing elements from index 0
+    2nd = number of elements to be deleted from the array -> We want to delete ALL (array length)
+     */
     setFavBooks(favBooks_arr);
   }
 
