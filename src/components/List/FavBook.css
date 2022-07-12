@@ -1,19 +1,55 @@
 .favbooks-container {
   text-align: center;
-  padding: 20px;
-  display: table;
-  margin: 0 auto;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: salmon;
+  height: 100px;
 }
 
 .favbook-input-field {
   margin: 10px 0 10px 0;
   padding: 15px;
-  font-size: 16px;
+  font-size: 18px;
   border: 0;
+  width: 100%;
   font-family: "Cormorant Garamond", serif;
   background-color: rgba(230, 230, 230, 0.6);
 }
 
 .favbook-button {
   height: 45px;
+  font-family: "Cormorant Garamond", serif;
+  margin: 15px;
+  width: 30%;
+  padding: 15px;
+  font-size: 18px;
+  border: 0;
+}
+
+.favbooks-list {
+  display: flex;
+  justify-content: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+}
+
+.list-button {
+  font-family: "Cormorant Garamond", serif;
+  margin: 5px;
+  margin-left: 10px;
+  width: 25%;
+  padding: 10px;
+  font-size: 18px;
+  border: 0;
+}
+
+.edit-input {
+  margin: 10px 0 10px 0;
+  padding: 15px;
+  font-size: 18px;
+  border: 0;
+  width: 100%;
+  font-family: "Cormorant Garamond", serif;
+  background-color: rgba(230, 230, 230, 0.6);
 }

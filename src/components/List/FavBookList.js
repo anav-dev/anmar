@@ -97,66 +97,75 @@ function FavBookList() {
   }
 
   return (
-    <div className="favbooks-container">
-      <input
-        value={title}
-        onChange={handleInput}
-        placeholder="Enter book title"
-        className="favbook-input-field"
-      />
-      <button onClick={handleSubmit} className="favbook-button">
-        Add Book
-      </button>
-      {errorTitle && <h4 className="error-msg"> {errorTitle}</h4>}
-      <ul>
-        {favBooks.map(function (i, index) {
-          if (i.isEdit) {
-            return (
-              <li key={index}>
-                <FavBook
-                  favBook={favBooks[index]}
-                  handleUpdateTitle={handleUpdateTitle}
-                  updateTitle={updateTitle}
-                />
-                <button
-                  onClick={function (e) {
-                    handleUpdate(e, i.id);
-                  }}
-                >
-                  Done
-                </button>
-              </li>
-            );
-          } else {
-            return (
-              <li key={index}>
-                <div>
+    <>
+      <div className="favbooks-container">
+        <span className="favbooks-list-main">
+          <input
+            value={title}
+            onChange={handleInput}
+            placeholder="Enter book title"
+            className="favbook-input-field"
+          />
+          <button onClick={handleSubmit} className="favbook-button">
+            Add book
+          </button>
+          {errorTitle && <h4 className="error-msg"> {errorTitle}</h4>}
+        </span>
+      </div>
+      <div className="favbooks-list">
+        <ul>
+          {favBooks.map(function (i, index) {
+            if (i.isEdit) {
+              return (
+                <li key={index} className="edit-input">
                   <FavBook
                     favBook={favBooks[index]}
                     handleUpdateTitle={handleUpdateTitle}
                     updateTitle={updateTitle}
                   />
                   <button
+                    className="done-button"
                     onClick={function (e) {
-                      handleDelete(e, i.id);
+                      handleUpdate(e, i.id);
                     }}
                   >
-                    Delete
+                    Done
                   </button>
-                  <button
-                    onClick={function (e) {
-                      handleEdit(e, i.id);
-                    }}
-                  >
-                    Update
-                  </button>
-                </div>
-              </li>
-            );
-          }
-        })}
-      </ul>
-    </div>
+                </li>
+              );
+            } else {
+              return (
+                <li key={index}>
+                  <div>
+                    <FavBook
+                      favBook={favBooks[index]}
+                      handleUpdateTitle={handleUpdateTitle}
+                      updateTitle={updateTitle}
+                    />
+                    <button
+                      className="list-button"
+                      onClick={function (e) {
+                        handleDelete(e, i.id);
+                      }}
+                    >
+                      Delete
+                    </button>
+                    <button
+                      className="list-button"
+                      onClick={function (e) {
+                        handleEdit(e, i.id);
+                      }}
+                    >
+                      Update
+                    </button>
+                  </div>
+                </li>
+              );
+            }
+          })}
+        </ul>
+      </div>
+    </>
   );
 }
 
