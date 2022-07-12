@@ -96,6 +96,16 @@ function FavBookList() {
     setFavBooks(favBooks);
   }
 
+  /*function to delete all book list*/
+
+  function handleDeleteList(e, id) {
+    var favBooks_arr = [...favBooks];
+    var index1 = 0;
+
+    favBooks_arr.splice(index1, favBooks_arr.length);
+    setFavBooks(favBooks_arr);
+  }
+
   return (
     <>
       <div className="favbooks-container">
@@ -110,6 +120,14 @@ function FavBookList() {
             Add book
           </button>
           {errorTitle && <h4 className="error-msg"> {errorTitle}</h4>}
+          <button
+            className="favbook-button"
+            onClick={function (e) {
+              handleDeleteList(e, id);
+            }}
+          >
+            Remove list
+          </button>
         </span>
       </div>
       <div className="favbooks-list">
@@ -117,14 +135,14 @@ function FavBookList() {
           {favBooks.map(function (i, index) {
             if (i.isEdit) {
               return (
-                <li key={index} className="edit-input">
+                <li key={index}>
                   <FavBook
                     favBook={favBooks[index]}
                     handleUpdateTitle={handleUpdateTitle}
                     updateTitle={updateTitle}
                   />
                   <button
-                    className="done-button"
+                    className="list-button"
                     onClick={function (e) {
                       handleUpdate(e, i.id);
                     }}
@@ -135,7 +153,7 @@ function FavBookList() {
               );
             } else {
               return (
-                <li key={index}>
+                <li key={index} className="book-added">
                   <div>
                     <FavBook
                       favBook={favBooks[index]}

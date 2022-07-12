@@ -27,11 +27,17 @@
   border: 0;
 }
 
+.favbook-button:hover {
+  background-color: antiquewhite;
+  cursor: pointer;
+}
+
 .favbooks-list {
   display: flex;
   justify-content: center;
   font-family: "Cormorant Garamond", serif;
   font-size: 25px;
+  margin-top: 20px;
 }
 
 .list-button {
@@ -44,12 +50,25 @@
   border: 0;
 }
 
-.edit-input {
+.list-button:hover {
+  background-color: antiquewhite;
+  cursor: pointer;
+}
+
+.book-edit {
   margin: 10px 0 10px 0;
-  padding: 15px;
-  font-size: 18px;
+  padding: 10px;
+  font-size: 20px;
   border: 0;
   width: 100%;
   font-family: "Cormorant Garamond", serif;
   background-color: rgba(230, 230, 230, 0.6);
+}
+
+.book-added {
+  border-top: 2px solid lightsalmon;
+  font-size: 23px;
+  padding: 2rem;
+  height: 10%;
+  width: 100%;
 }
