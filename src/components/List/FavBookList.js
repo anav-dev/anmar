@@ -1,13 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FavBook from "./FavBook";
 import "./FavBook.css";
 
 function FavBookList() {
-  const [favBooks, setFavBooks] = useState([]);
+  const [favBooks, setFavBooks] = useState([], () => {
+    const localData = localStorage.getItem("favBooks");
+    console.log(localData);
+    return localData ? JSON.parse(localData) : [];
+  }); /*localStorage*/
   const [title, setTitle] = useState("");
   const [updateTitle, setUpdateTitle] = useState("");
   const [id, setId] = useState(0);
   const [errorTitle, setErrorTitle] = useState("");
+
+  /*localStorage*/
+  /*inspiration source: https://www.youtube.com/watch?v=SOnMln3W0U8&ab_channel=TheNetNinja*/
+
+  /*Whenever the favBooks data changes, this hook will run*/
+  useEffect(() => {
+    getLocalStorage();
+  }, [favBooks]);
+
+  const getLocalStorage = async function () {
+    favBooks = localStorage.setItem("favBooks", JSON.stringify(favBooks));
+  };
+  /*Turn favBooks into a JSON String and setItem with new title everytime 
+  user add a new book to the list. Everytime a new book is added, what is stored in 
+  localStoraged will be updated */
 
   function handleInput(e) {
     e.preventDefault();
