@@ -1,4 +1,4 @@
-# AnMar Library
+# Anmar Library
 
 ![Anmar](https://github.com/anav-dev/react-finalproject-ca2/blob/main/image-anmar-hero%402x.jpg)
 
